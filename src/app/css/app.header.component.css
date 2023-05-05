@@ -1,0 +1,25 @@
+body {
+    background-color: #FD7E37;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+}
+.header h2,h3{
+    font-weight: 700;
+}
+.header-logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.header-logo img{
+    max-height: 50px;
+
+}
+.header-auth{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}

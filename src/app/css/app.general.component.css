@@ -1,0 +1,16 @@
+h1, h2, h3, h4{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+iframe[iframetag] {
+    border: none;
+
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
