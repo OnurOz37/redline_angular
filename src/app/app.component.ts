@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 //Définition du composant
 @Component({
   selector: 'app-root', //donner un nom a son composant
-  templateUrl: './templates/app.header.component.html',
-  styleUrls: ['./css/app.header.component.css', 'css/app.general.component.css']
+  templateUrl: './templates/app.component.html',
+  styleUrls: ['./css/app.header.component.css', 'css/app.general.component.css', 'css/app.content.component.css']
 })
 export class AppComponent {
   name = 'Onur'
