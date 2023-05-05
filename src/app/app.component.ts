@@ -3,6 +3,7 @@
 * A la ligne 1, on importe l’annotation Component depuis le cœur de Angular
 * */
 import { Component } from '@angular/core';
+import { ApiserviceService } from './apiservice.service'
 
 //Définition du composant
 @Component({
@@ -11,6 +12,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./css/app.header.component.css', 'css/app.general.component.css', 'css/app.content.component.css']
 })
 export class AppComponent {
+  newdata:any;
+  constructor(private _apiservice:ApiserviceService) {
+  }
+
+  ngOnInit(){
+    this._apiservice.getdata().subscribe(res=>{
+      this.newdata=res;
+    });
+  }
   name = 'Onur'
   title= "SIUU";
 }
