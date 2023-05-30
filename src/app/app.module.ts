@@ -11,6 +11,7 @@ import { SitesComponent } from './modules/general/sites/sites.component';
 import { SallesComponent } from './modules/general/sites/salles/salles.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ApiserviceService} from "./apiservice.service";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -25,11 +26,12 @@ import {ApiserviceService} from "./apiservice.service";
 
   ],
 
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ],
   providers: [ApiserviceService],
   bootstrap: [AppComponent]
 })

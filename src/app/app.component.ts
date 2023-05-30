@@ -17,10 +17,6 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    this._apiservice.getdata().subscribe(res=>{
-      this.newdata=res;
-    });
   }
-  name = 'Onur'
-  title= "SIUU";
+
 }

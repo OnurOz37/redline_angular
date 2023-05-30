@@ -7,7 +7,4 @@ import { catchError, retry } from 'rxjs/operators';
 export class ApiserviceService {
     constructor(private _http: HttpClient) { }
 
-    getdata(){
-        return this._http.get("/v1/"+"http://localhost:8080/api/site/get")
-    }
 }
