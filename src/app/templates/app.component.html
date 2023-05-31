@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <body>
 <div class="header">
     <div class="header-logo">
@@ -11,9 +11,12 @@
     <div class="header-auth">
         <h3>Admin </h3>
         <a href="https://www.facebook.com"><i class="fa-solid fa-user"></i></a>
+        <!-- Bouton de déconnexion -->
+        <button *ngIf="authService.isAuthenticated()" (click)="logout()">Déconnexion</button>
     </div>
 </div>
 <nav>
+
     <h2>4 Links with Routes</h2>
     <ul>
         <li><a routerLink="/home">Accueil</a></li>
@@ -45,5 +48,4 @@
     <router-outlet></router-outlet>
 </main>
 </body>
-
 </html>
