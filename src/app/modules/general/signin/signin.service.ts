@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
-import {map, tap} from "rxjs";
-import {catchError} from "rxjs/operators";
+import { tap } from "rxjs";
 
 
 @Injectable({
@@ -19,7 +18,6 @@ export class SigninService {
                 console.log('Access token:', accessToken);
                 if (accessToken) {
                     const bearerToken = accessToken.replace('Bearer ', '');
-                    console.log('Bearer token:', bearerToken);
                     this.authService.setAccessToken(bearerToken);
                 } else {
                     console.error('Bearer token not found in response headers');

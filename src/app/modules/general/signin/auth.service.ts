@@ -27,8 +27,13 @@ export class AuthService {
         }
         return null;
     }
+
     removeAccessToken(): void {
         localStorage.removeItem(this.accessTokenKey);
     }
 
+    logout(): void {
+        this.removeAccessToken();
+        // Autres opérations de nettoyage ou de réinitialisation de l'état de l'application
+    }
 }
