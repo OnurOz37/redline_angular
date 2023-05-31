@@ -5,7 +5,7 @@ import { SigninComponent} from "./modules/general/signin/signin.component";
 import { SignupComponent } from './modules/general/signup/signup.component';
 import { ReservationComponent } from './modules/general/reservation/reservation.component';
 import { SitesComponent} from "./modules/general/sites/sites.component";
-import { SallesComponent} from "./modules/general/sites/salles/salles.component";
+import { SallesComponent} from "./modules/general/salles/salles.component";
 
 
 const routes: Routes = [
@@ -13,12 +13,8 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'reservations', component: ReservationComponent },
-  { path: 'sites', component: SitesComponent,
-    children: [
-      { path: 'salles', component: SallesComponent },
-    ],
-  },
-
+  { path: 'sites', component: SitesComponent},
+  { path: 'salles', component: SallesComponent }
 ];
 
 @NgModule({

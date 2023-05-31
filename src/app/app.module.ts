@@ -8,11 +8,11 @@ import { SignupComponent } from './modules/general/signup/signup.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReservationComponent } from './modules/general/reservation/reservation.component';
 import { SitesComponent } from './modules/general/sites/sites.component';
-import { SallesComponent } from './modules/general/sites/salles/salles.component';
+import { SallesComponent } from './modules/general/salles/salles.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ApiserviceService} from "./apiservice.service";
 import {FormsModule} from "@angular/forms";
-
+import {SallesService} from "./modules/general/salles/salles.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +32,11 @@ import {FormsModule} from "@angular/forms";
         HttpClientModule,
         FormsModule
     ],
-  providers: [ApiserviceService],
+  providers: [
+      ApiserviceService,
+      SallesService
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

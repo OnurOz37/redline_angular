@@ -12,7 +12,6 @@ import { ApiserviceService } from './apiservice.service'
   styleUrls: ['./css/app.header.component.css', 'css/app.general.component.css', 'css/app.content.component.css']
 })
 export class AppComponent {
-  newdata:any;
   constructor(private _apiservice:ApiserviceService) {
   }
 
