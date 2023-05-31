@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import { LoginService } from './login.service';
+import { SigninService } from './signin.service';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css']
+    selector: 'app-signin',
+    templateUrl: './signin.component.html',
+    styleUrls: ['./signin.component.css']
 })
-export class LoginComponent {
+export class SigninComponent {
     username: string;
     password: string;
 
-    constructor(private loginService: LoginService) { }
+    constructor(private signinService: SigninService) { }
 
     onSubmit() {
-        this.loginService.login(this.username, this.password).subscribe(
+        this.signinService.login(this.username, this.password).subscribe(
             response => {
                 // Gérer la réponse de l'API en cas de succès
                 console.log('Login successful');

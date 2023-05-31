@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // import {AngularFirestore} from '@angular/fire/compat/firestore/';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './modules/general/home/home.component';
-import { LoginComponent } from './modules/general/login/login.component';
+import { SigninComponent} from "./modules/general/signin/signin.component";
 import { SignupComponent } from './modules/general/signup/signup.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReservationComponent } from './modules/general/reservation/reservation.component';
@@ -18,7 +18,7 @@ import {FormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
+    SigninComponent,
     SignupComponent,
     ReservationComponent,
     SitesComponent,
