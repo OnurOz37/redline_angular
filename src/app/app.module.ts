@@ -13,6 +13,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {ApiserviceService} from "./apiservice.service";
 import {FormsModule} from "@angular/forms";
 import {SallesService} from "./modules/general/salles/salles.service";
+import {SitesService} from "./modules/general/sites/sites.service";
+import {MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field"
+import {MatInputModule} from "@angular/material/input";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -30,11 +35,16 @@ import {SallesService} from "./modules/general/salles/salles.service";
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatInputModule,
+        BrowserAnimationsModule
     ],
   providers: [
       ApiserviceService,
-      SallesService
+      SallesService,
+      SitesService
   ],
   bootstrap: [AppComponent]
 })

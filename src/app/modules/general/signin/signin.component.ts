@@ -20,7 +20,6 @@ export class SigninComponent {
         this.signinService.login(this.username, this.password).subscribe(
             response => {
                 // Gérer la réponse de l'API en cas de succès
-                console.log('Login successful');
                 this.router.navigateByUrl('/home');
             },
             error => {

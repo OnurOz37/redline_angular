@@ -1,5 +1,22 @@
+<div class="menu-container">
+    <mat-form-field>
+        <mat-label class="label-block">Sites</mat-label>
+        <mat-select [(ngModel)]="selectedSite" (selectionChange)="getSalles($event.value)">
+            <mat-option *ngFor="let site of sites" [value]="site" >
+                {{site.libelle}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
 
-<main>
-    <h4>Routes Result</h4>
-    <router-outlet></router-outlet>
-</main>
+<div class="menu-container">
+    <mat-form-field *ngIf="selectedSite">
+        <mat-label class="label-block">Salles</mat-label>
+        <mat-select name="selectedSalle" id="selectedSalle">
+            <mat-option *ngFor="let salle of salles" [value]="salle">
+                {{salle.libelle}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+

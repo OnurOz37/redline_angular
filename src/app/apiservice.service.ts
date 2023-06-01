@@ -8,7 +8,6 @@ export class ApiserviceService {
 
     protectedHeaders() {
         const token = this.authService.getAccessToken();
-        console.log("token : " + token)
         if(token) {
             return new HttpHeaders({
                 'Content-Type': 'application/json',
