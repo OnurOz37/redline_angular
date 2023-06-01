@@ -10,15 +10,15 @@ import {SallesService} from "./salles.service";
 export class SallesComponent {
   salles: any[];
 
-  constructor(private salleService:SallesService) {
+  constructor(private sallesService:SallesService) {
   }
   ngOnInit(){
         this.getSalles()
   }
 
-    getSalles(): void {
-      this.salleService.getSalles().pipe().subscribe(data => {
-        this.salles = data as any[];
-      })
-    }
+  getSalles(): void {
+    this.sallesService.getSalles().pipe().subscribe(data => {
+      this.salles = data as any[];
+    })
+  }
 }
