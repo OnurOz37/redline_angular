@@ -10,7 +10,7 @@ import { ReservationComponent } from './modules/general/reservation/reservation.
 import { SitesComponent } from './modules/general/sites/sites.component';
 import { SallesComponent } from './modules/general/salles/salles.component';
 import {HttpClientModule} from "@angular/common/http";
-import {ApiserviceService} from "./apiservice.service";
+import {ApiService} from "./api.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SallesService} from "./modules/general/salles/salles.service";
 import {SitesService} from "./modules/general/sites/sites.service";
@@ -29,8 +29,7 @@ import {MatCardModule} from "@angular/material/card";
     SignupComponent,
     ReservationComponent,
     SitesComponent,
-    SallesComponent,
-
+    SallesComponent
   ],
 
     imports: [
@@ -47,7 +46,7 @@ import {MatCardModule} from "@angular/material/card";
         MatCardModule
     ],
   providers: [
-      ApiserviceService,
+      ApiService,
       SallesService,
       SitesService
   ],

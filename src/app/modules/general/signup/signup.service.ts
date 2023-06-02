@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {ApiserviceService} from "../../../apiservice.service";
+import {ApiService} from "../../../api.service";
 
 @Injectable()
 export class UserService {
-    constructor(private http: HttpClient, private apiService: ApiserviceService) {}
+    constructor(private http: HttpClient, private apiService: ApiService) {}
 
     createUser(userData: Object) {
         const headers = this.apiService.protectedHeaders();

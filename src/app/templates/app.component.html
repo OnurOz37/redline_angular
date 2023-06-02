@@ -21,7 +21,9 @@
     <ul>
         <li><a routerLink="/home">Accueil</a></li>
         <li><a routerLink="/signin">Se connecter</a></li>
+        <div *ngIf="authService.getRole() == 'ROLE_ADMIN'">
         <li><a routerLink="/signup">S'inscrire</a></li>
+        </div>
         <li><a routerLink="/reservations">Reservation</a></li>
         <li><a routerLink="/sites">Sites</a></li>
     </ul>
