@@ -10,11 +10,21 @@ export class SitesService {
     }
 
     getSites() {
-        const headers= this.apiService.protectedHeaders();
-        if(headers) {
+        const headers = this.apiService.protectedHeaders();
+        if (headers) {
             return this.http.get('/api/site/get', {headers});
         } else {
             throw new Error("Les en-têtes d'authentification ne sont pas disponible")
         }
+    }
+
+    addSite(site: Object) {
+        const headers = this.apiService.protectedHeaders();
+        if (!headers) {
+            throw new Error("Les en-têtes d'authentification ne sont pas disponible")
+        }
+
+        const siteJson = JSON.stringify(site);
+        return this.http.post('/api/site/add', siteJson, {headers});
     }
 }

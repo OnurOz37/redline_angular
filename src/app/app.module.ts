@@ -11,13 +11,15 @@ import { SitesComponent } from './modules/general/sites/sites.component';
 import { SallesComponent } from './modules/general/salles/salles.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ApiService} from "./api.service";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SallesService} from "./modules/general/salles/salles.service";
 import {SitesService} from "./modules/general/sites/sites.service";
 import {MatSelectModule} from "@angular/material/select";
 import {MatFormFieldModule} from "@angular/material/form-field"
 import {MatInputModule} from "@angular/material/input";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -38,7 +40,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatSelectModule,
         MatFormFieldModule,
         MatInputModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        MatCardModule
     ],
   providers: [
       ApiService,
