@@ -16,4 +16,14 @@ export class SallesService {
             throw new Error("Les en-têtes d'authentification ne sont pas disponible")
         }
     }
+
+    addSalle(salle: any) {
+        const headers = this.apiService.protectedHeaders();
+            if(headers) {
+                const salleJson = JSON.stringify(salle);
+                return this.http.post('/api/salle/add',salleJson, {headers});
+            } else {
+                throw new Error("Les en-têtes d'authentification ne sont pas disponible")
+            }
+    }
 }

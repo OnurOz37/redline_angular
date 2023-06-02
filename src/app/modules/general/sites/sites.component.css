@@ -3,6 +3,12 @@
 }
 
 .menu-container {
-    display: block;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.menu-container button {
+    white-space: nowrap;
 }

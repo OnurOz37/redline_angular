@@ -41,8 +41,8 @@ import {MatCardModule} from "@angular/material/card";
         MatFormFieldModule,
         MatInputModule,
         BrowserAnimationsModule,
-        MatButtonModule,
         ReactiveFormsModule,
+        MatButtonModule,
         MatCardModule
     ],
   providers: [

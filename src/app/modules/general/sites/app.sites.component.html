@@ -7,6 +7,7 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
+
 </div>
 
 <!-- Formulaire d'ajout d'un site -->
@@ -58,8 +59,8 @@
     </mat-card-content>
 </mat-card>
 
-<div class="menu-container">
-    <mat-form-field *ngIf="selectedSite">
+<div class="menu-container" *ngIf="selectedSite">
+    <mat-form-field>
         <mat-label class="label-block">Salles</mat-label>
         <mat-select name="selectedSalle" id="selectedSalle">
             <mat-option *ngFor="let salle of salles" [value]="salle">
@@ -67,4 +68,8 @@
             </mat-option>
         </mat-select>
     </mat-form-field>
+    <button mat-raised-button (click)="toggleAfficherAjoutSalle()">Ajouter une salle</button>
 </div>
+
+<app-salles *ngIf="afficherAjoutSalle"></app-salles>
+
