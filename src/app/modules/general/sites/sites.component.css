@@ -7,8 +7,38 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .menu-container button {
     white-space: nowrap;
 }
+
+mat-card {
+    margin-bottom: 20px;
+}
+
+mat-form-field {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.menu-container form {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.menu-container mat-form-field {
+    margin-bottom: 0;
+}
+
+.menu-container mat-card-actions {
+    margin-top: 10px;
+}
+
+.menu-container button {
+    white-space: nowrap;
+}
+

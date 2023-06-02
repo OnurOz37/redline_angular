@@ -14,7 +14,7 @@
 <button mat-raised-button (click)="toggleAfficherAjout()">Ajouter un site</button>
 <mat-card class="menu-container" *ngIf="afficherAjout">
     <mat-card-content>
-        <form [formGroup]="ajoutForm" (ngSubmit)="onAjoutFormSubmit()">
+        <form [formGroup]="ajoutForm" (ngSubmit)="onAjoutFormSubmit()" >
             <mat-form-field>
                 <mat-label>Libellé</mat-label>
                 <input matInput [formControl]="ajoutForm.controls.libelle">
@@ -52,7 +52,7 @@
                 </mat-error>
             </mat-form-field>
             <mat-card-actions>
-                <button mat-raised-button type="submit">Enregistrer</button>
+                <button mat-raised-button color="primary" type="submit" [disabled]="ajoutForm.invalid">Enregistrer</button>
             </mat-card-actions>
             <mat-card-footer *ngIf="ajoutFormMessage">{{ajoutFormMessage}}</mat-card-footer>
         </form>
