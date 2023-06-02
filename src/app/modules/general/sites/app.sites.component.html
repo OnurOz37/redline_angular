@@ -2,12 +2,60 @@
     <mat-form-field>
         <mat-label class="label-block">Sites</mat-label>
         <mat-select [(ngModel)]="selectedSite" (selectionChange)="getSalles($event.value)">
-            <mat-option *ngFor="let site of sites" [value]="site" >
+            <mat-option *ngFor="let site of sites" [value]="site">
                 {{site.libelle}}
             </mat-option>
         </mat-select>
     </mat-form-field>
 </div>
+
+<!-- Formulaire d'ajout d'un site -->
+<button mat-raised-button (click)="toggleAfficherAjout()">Ajouter un site</button>
+<mat-card class="menu-container" *ngIf="afficherAjout">
+    <mat-card-content>
+        <form [formGroup]="ajoutForm" (ngSubmit)="onAjoutFormSubmit()">
+            <mat-form-field>
+                <mat-label>Libellé</mat-label>
+                <input matInput [formControl]="ajoutForm.controls.libelle">
+                <mat-error *ngIf="ajoutForm.controls.libelle.invalid">
+                    <span *ngIf="ajoutForm.controls.libelle.errors?.['required']">
+                        Ce champ est obligatoire.
+                    </span>
+                    <span *ngIf="ajoutForm.controls.libelle.errors?.['maxlength']">
+                        Le libellé ne peut dépasser 50 caractères.
+                    </span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput [formControl]="ajoutForm.controls.description"></textarea>
+                <mat-error *ngIf="ajoutForm.controls.description.invalid">
+                    <span *ngIf="ajoutForm.controls.description.errors?.['required']">
+                        Ce champ est obligatoire.
+                    </span>
+                    <span *ngIf="ajoutForm.controls.description.errors?.['maxlength']">
+                        La description ne peut dépasser 255 caractères.
+                    </span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Adresse</mat-label>
+                <textarea matInput [formControl]="ajoutForm.controls.adresse"></textarea>
+                <mat-error *ngIf="ajoutForm.controls.adresse.invalid">
+                    <span *ngIf="ajoutForm.controls.adresse.errors?.['required']">
+                        Ce champ est obligatoire.
+                    </span>
+                    <span *ngIf="ajoutForm.controls.adresse.errors?.['maxlength']">
+                        L'adresse ne peut dépasser 150 caractères.
+                    </span>
+                </mat-error>
+            </mat-form-field>
+            <mat-card-actions>
+                <button mat-raised-button type="submit">Enregistrer</button>
+            </mat-card-actions>
+        </form>
+    </mat-card-content>
+</mat-card>
 
 <div class="menu-container">
     <mat-form-field *ngIf="selectedSite">
@@ -19,4 +67,3 @@
         </mat-select>
     </mat-form-field>
 </div>
-
