@@ -8,8 +8,6 @@ import { UserService } from './signup.service';
     providers: [UserService] // Ajoutez le service comme fournisseur
 })
 export class SignupComponent {
-    username: string;
-    password: string;
     nom: string;
     mail: string;
     motDePasse: string;
@@ -31,7 +29,7 @@ export class SignupComponent {
         };
 
         this.userService.createUser(userData).subscribe(
-            response => {
+            () => {
                 alert('Utilisateur créé avec succès.');
                 this.nom = '';
                 this.mail = '';
@@ -40,7 +38,12 @@ export class SignupComponent {
             },
             error => {
                 console.error("Erreur lors de la création de l'utilisateur:", error);
-                alert("Une erreur s'est produite lors de la création de l'utilisateur. Veuillez réessayer.");
+                if (error.status === 409) {
+                    alert("Oops ! Une erreur est survenue lors de la création de votre compte." +
+                        "L'adresse e-mail que vous avez fournie est déjà associée à un autre compte utilisateur.");
+                } else {
+                    alert("Une erreur s'est produite lors de la connexion. Veuillez réessayer.");
+                }
             }
         );
     }
