@@ -11,7 +11,7 @@
     <div class="header-auth">
         <h3>Admin </h3>
         <!-- Bouton de déconnexion -->
-        <button *ngIf="authService.isAuthenticated()" (click)="logout()">Déconnexion</button>
+        <button mat-raised-button *ngIf="authService.isAuthenticated()" (click)="logout()">Déconnexion</button>
     </div>
 </div>
 <nav>

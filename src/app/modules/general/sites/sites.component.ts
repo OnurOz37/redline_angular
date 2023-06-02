@@ -12,14 +12,13 @@ export class SitesComponent {
     sites: any[];
     salles: any[];
     selectedSite: any;
-    selectedSalle: any;
     afficherAjout: boolean;
     afficherAjoutSalle: boolean;
     ajoutForm = this.formBuilder.group({
         libelle: ['', [Validators.required, Validators.maxLength(50)]],
         description: ['', [Validators.required, Validators.maxLength(255)]],
         adresse: ['', [Validators.required, Validators.maxLength(150)]]
-    })
+    });
     ajoutFormMessage: string | null;
 
     constructor(private sitesService: SitesService, private sallesService: SallesService, private formBuilder: FormBuilder) {
@@ -32,7 +31,7 @@ export class SitesComponent {
     getSites(): void {
         this.sitesService.getSites().pipe().subscribe(data => {
             this.sites = data as any[];
-        })
+        });
     }
 
     getSalles(site: any): void {
