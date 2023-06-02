@@ -1,5 +1,35 @@
-<h2>Salle works !</h2>
+<div class="menu-container" [formGroup]="newSalleForm">
+    <mat-form-field>
+        <input matInput formControlName="libelle" placeholder="Libelle">
+        <mat-error *ngIf="newSalleForm.controls['libelle'].invalid && newSalleForm.controls['libelle'].touched">
+            Le libelle est requis
+        </mat-error>
+    </mat-form-field>
 
-<div *ngFor="let salle of salles">
-    {{salle.libelle}}
+    <mat-form-field>
+        <input matInput formControlName="nbPlaces" placeholder="Capacite">
+        <mat-error *ngIf="newSalleForm.controls['nbPlaces'].invalid && newSalleForm.controls['nbPlaces'].touched">
+            La capacité est requise et doit être un nombre positif ou nul
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput formControlName="description" placeholder="Description">
+        <mat-error *ngIf="newSalleForm.controls['description'].invalid && newSalleForm.controls['description'].touched">
+            La description est requise
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select formControlName="siteId" placeholder="Site">
+            <mat-option *ngFor="let site of sites" [value]="site.id">{{ site.libelle }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="newSalleForm.controls['siteId'].invalid && newSalleForm.controls['siteId'].touched">
+            Le site est requis
+        </mat-error>
+    </mat-form-field>
+
+
+    <button mat-raised-button color="primary" (click)="addSalle()" [disabled]="newSalleForm.invalid">Ajouter salle</button>
 </div>
+

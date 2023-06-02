@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent,canActivate:[AdminGuard]},
   { path: 'reservations', component: ReservationComponent },
-  { path: 'sites', component: SitesComponent}
+  { path: 'sites', component: SitesComponent},
+  { path: 'salles', component: SallesComponent}
 ];
 
 @NgModule({

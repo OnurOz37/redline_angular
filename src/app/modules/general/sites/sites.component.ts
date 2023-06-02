@@ -13,7 +13,8 @@ export class SitesComponent {
     salles: any[];
     selectedSite: any;
     selectedSalle: any;
-    afficherAjout: boolean
+    afficherAjout: boolean;
+    afficherAjoutSalle: boolean;
     ajoutForm = this.formBuilder.group({
         libelle: ['', [Validators.required, Validators.maxLength(50)]],
         description: ['', [Validators.required, Validators.maxLength(255)]],
@@ -44,6 +45,10 @@ export class SitesComponent {
 
     toggleAfficherAjout(): void {
         this.afficherAjout = !this.afficherAjout;
+    }
+
+    toggleAfficherAjoutSalle(): void {
+        this.afficherAjoutSalle = !this.afficherAjoutSalle;
     }
 
     onAjoutFormSubmit() {
