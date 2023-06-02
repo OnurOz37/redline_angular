@@ -1,11 +1,11 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {AuthService} from "../signin/auth.service";
-import {ApiserviceService} from "../../../apiservice.service";
+import {AuthService} from "../../../auth.service";
+import {ApiService} from "../../../api.service";
 
 @Injectable()
 export class SallesService {
-    constructor(private http: HttpClient, private authService: AuthService, private apiService: ApiserviceService) {
+    constructor(private http: HttpClient, private authService: AuthService, private apiService: ApiService) {
     }
 
     getSalles() {

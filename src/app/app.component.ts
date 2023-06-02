@@ -4,7 +4,7 @@
 * */
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {AuthService} from "./modules/general/signin/auth.service";
+import {AuthService} from "./auth.service";
 
 //Définition du composant
 @Component({
