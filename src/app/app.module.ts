@@ -17,7 +17,7 @@ import {SitesService} from "./modules/general/sites/sites.service";
 import {MatSelectModule} from "@angular/material/select";
 import {MatFormFieldModule} from "@angular/material/form-field"
 import {MatInputModule} from "@angular/material/input";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,8 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     SignupComponent,
     ReservationComponent,
     SitesComponent,
-    SallesComponent,
-
+    SallesComponent
   ],
 
     imports: [
