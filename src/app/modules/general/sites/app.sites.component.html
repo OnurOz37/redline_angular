@@ -53,6 +53,7 @@
             <mat-card-actions>
                 <button mat-raised-button type="submit">Enregistrer</button>
             </mat-card-actions>
+            <mat-card-footer *ngIf="ajoutFormMessage">{{ajoutFormMessage}}</mat-card-footer>
         </form>
     </mat-card-content>
 </mat-card>

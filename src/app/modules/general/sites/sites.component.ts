@@ -19,6 +19,7 @@ export class SitesComponent {
         description: ['', [Validators.required, Validators.maxLength(255)]],
         adresse: ['', [Validators.required, Validators.maxLength(150)]]
     })
+    ajoutFormMessage: string | null;
 
     constructor(private sitesService: SitesService, private sallesService: SallesService, private formBuilder: FormBuilder) {
     }
@@ -49,10 +50,14 @@ export class SitesComponent {
         if (this.ajoutForm.valid) {
             this.sitesService.addSite(this.ajoutForm.value)
                 .subscribe(response => {
-                    // Note : Ce code n'est pas appelé si la réponse HTTP est une erreur...
-                    this.sites.push(response);
-                    this.ajoutForm.reset();
-                });
+                        this.sites.push(response);
+                        this.ajoutForm.reset();
+                        this.ajoutFormMessage = "Succès.";
+                    },
+                    error => {
+                        this.ajoutFormMessage = "Une erreur s'est produite : les données n'ont pas été enregistrées.";
+                    }
+                );
         } else {
             console.log("Formulaire invalide. Envoi annulé.")
         }
