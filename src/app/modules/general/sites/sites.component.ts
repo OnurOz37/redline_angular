@@ -59,7 +59,7 @@ export class SitesComponent {
                     }
                 );
         } else {
-            console.log("Formulaire invalide. Envoi annulé.")
+            this.ajoutFormMessage = "Enregistrement impossible : formulaire erroné.";
         }
     }
 }
