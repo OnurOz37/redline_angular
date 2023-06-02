@@ -1,0 +1,26 @@
+<mat-card class="date-picker">
+    <mat-calendar [(selected)]="date" (selectedChange)="onDateChanged()"></mat-calendar>
+</mat-card>
+
+<p>Il n'est pas possible de réserver une salle pour la journée en cours.</p>
+
+<mat-card>
+    <mat-card-header>Matin</mat-card-header>
+    <mat-card-content>
+        <button mat-raised-button *ngFor="let salle of dispoCreneau1" (click)="reserver(salle.id, date, 1)">{{salle.libelle}}</button>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>Après-midi</mat-card-header>
+    <mat-card-content>
+        <button mat-raised-button *ngFor="let salle of dispoCreneau2" (click)="reserver(salle.id, date, 1)">{{salle.libelle}}</button>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>Soir</mat-card-header>
+    <mat-card-content>
+        <button mat-raised-button *ngFor="let salle of dispoCreneau3" (click)="reserver(salle.id, date, 1)">{{salle.libelle}}</button>
+    </mat-card-content>
+</mat-card>

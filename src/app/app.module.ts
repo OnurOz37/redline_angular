@@ -20,6 +20,9 @@ import {MatInputModule} from "@angular/material/input";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
+import {MatDatepicker, MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {ReservationService} from "./modules/general/reservation/reservation.service";
 
 @NgModule({
   declarations: [
@@ -43,12 +46,15 @@ import {MatCardModule} from "@angular/material/card";
         BrowserAnimationsModule,
         ReactiveFormsModule,
         MatButtonModule,
-        MatCardModule
+        MatCardModule,
+        MatDatepickerModule,
+        MatNativeDateModule
     ],
   providers: [
       ApiService,
       SallesService,
-      SitesService
+      SitesService,
+      ReservationService
   ],
   bootstrap: [AppComponent]
 })
